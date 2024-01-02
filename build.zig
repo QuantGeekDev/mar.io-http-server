@@ -5,7 +5,7 @@ pub fn build(b: *std.build.Builder) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const exe = b.addExecutable(.{
-        .name = "example",
+        .name = "server",
         .target = target,
         .optimize = optimize,
     });
