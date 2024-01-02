@@ -9,5 +9,7 @@ void initializationMessage()
 int main()
 {
   initializationMessage();
+
+  printf("\nShutting down server...");
   exit(0);
 }
