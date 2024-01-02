@@ -27,7 +27,12 @@ jobs:
         with:
           must_deny: "zig-cache"
 
-      - name: Ensure zig-cache is ignored by Git
+      - name: Ensure all executables are ignored by Git
         uses: dkershner6/gitignore-parser@v2
         with:
             must_deny: "*.exe"
+
+      - name: Ensure all pdb files are ignored by Git
+        uses: dkershner6/gitignore-parser@v2
+        with:
+            must_deny: "*.pdb"

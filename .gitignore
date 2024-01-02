@@ -2,5 +2,5 @@
 *.pdb
 DS_Store
 .vscode
-zig-out/
-zig-cache/
+zig-out
+zig-cache
