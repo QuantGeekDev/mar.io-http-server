@@ -26,3 +26,8 @@ jobs:
         uses: dkershner6/gitignore-parser@v1
         with:
           must_deny: "zig-cache"
+
+      - name: Ensure zig-cache is ignored by Git
+        uses: dkershner6/gitignore-parser@v1
+        with:
+            must_deny: "*.exe"
