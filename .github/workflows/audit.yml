@@ -12,22 +12,22 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check if .editorconfig exists
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: ".editorconfig"
           allow_failure: true
 
       - name: Ensure zig-out is ignored by Git
-        uses: dkershner6/gitignore-parser@v1
+        uses: dkershner6/gitignore-parser@v2
         with:
           must_deny: "zig-out"
 
       - name: Ensure zig-cache is ignored by Git
-        uses: dkershner6/gitignore-parser@v1
+        uses: dkershner6/gitignore-parser@v2
         with:
           must_deny: "zig-cache"
 
       - name: Ensure zig-cache is ignored by Git
-        uses: dkershner6/gitignore-parser@v1
+        uses: dkershner6/gitignore-parser@v2
         with:
             must_deny: "*.exe"
