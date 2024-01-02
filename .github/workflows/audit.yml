@@ -1,0 +1,28 @@
+name: Code audit
+
+on: push
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Code audit
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Check if .editorconfig exists
+        uses: andstor/file-existence-action@v1
+        with:
+          files: ".editorconfig"
+          allow_failure: true
+
+      - name: Ensure zig-out is ignored by Git
+        uses: dkershner6/gitignore-parser@v1
+        with:
+          must_deny: "zig-out"
+
+      - name: Ensure zig-cache is ignored by Git
+        uses: dkershner6/gitignore-parser@v1
+        with:
+          must_deny: "zig-cache"
